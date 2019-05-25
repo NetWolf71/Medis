@@ -1,0 +1,115 @@
+.calendario{
+    background: #523a45;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    margin-top: 50px;
+ }
+.previo{
+    background: #f2f2f2;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: inset 1px 1px 0px white;
+}
+ 
+.siguiente{
+    background: #f2f2f2;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: inset 1px 1px 0px white;
+}
+ 
+.previo a{
+    color:#a2a2a2;
+}
+ 
+.siguiente a{
+    color:#a2a2a2;
+}
+ 
+ a{
+    text-decoration:none;
+}
+ 
+.fecha_actual{
+    font-family: helvetica, arial;
+    font-weight: normal;
+    padding:3%;
+    text-align: center;
+    color: #3E424B;
+    font-size: 125%;
+    background: #f2f2f2;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: inset 1px 1px 0px white;
+}
+ 
+.dias_semana {
+    font-family: helvetica, arial; 
+    font-size: 95%;
+    color: #3E424B;
+    background: #f2f2f2;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: inset 1px 1px 0px white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.highlight {
+    color: #2a2a3c;
+}
+ul li a{
+    text-align: left;
+}
+ 
+.dia {
+    font-family: Georgia; 
+    width:8%;
+    height:5%;
+    color: #949494;
+    font-size: 170%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: inset 1px 1px 0px white;
+    background: -moz-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(240,240,240,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,0)), color-stop(100%,rgba(240,240,240,1))); /*   Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f2f2f2', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+.dia:hover {
+    background: #dcdcdc;
+}
+ 
+ 
+.individual {
+    vertical-align: top
+}
+ 
+/*estilos día reservado*/
+ 
+ 
+/*estilos día completo*/
+#oc_11 {
+    background: red;
+    color: white;
+    text-shadow: 1px 1px #fff;
+    
+    }
+/*estilos días anteriores*/
+#oc_ant{
+    color: #d2d2d2;
+    text-shadow: 1px 1px #fff;
+}
+/*estilos fin de semana*/
+#oc_fest{
+    color: #d2d2d2;
+    text-shadow: 1px 1px #fff;
+}
