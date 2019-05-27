@@ -64,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-4"><hr/>
-			  <h5>Si no tiene una cuenta MEDIS, obtenga una gratis registrándose <a class="btn btn-sm btn-warning" href="<?=base_url()?>index.php/ClientesController"><strong>  Aquí </a></strong></h5>
+			  <h5>Si no tiene una cuenta MEDIS, obtenga una gratis registrándose <a class="btn btn-sm btn-warning" href="<?=base_url('index.php/ClientesNewController')?>"><strong>  Aquí </a></strong></h5>
 			</div>
 			<div class="col-md-4">
 			</div>

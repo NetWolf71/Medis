@@ -28,7 +28,7 @@ class UsuariosModel extends CI_Model {
 		
 		$sql = "SELECT id_pers , pers_name1,pers_name2,pers_lastname1,pers_lastname2,fecha_nacimiento,dni,
 				pers_fecha_creacion,pers_vigencia,id_pers_tipo,email,pers_user,pers_password, id_especialidad, pers_nombre_completo 
-				FROM usuarios where id_pers_tipo='3' ";
+				FROM usuarios where id_pers_tipo='4' ";
 		
 		
 		if($txt_primer_nombre){
