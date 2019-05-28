@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group">
 					 </br>
 					<label for="txt_loginUser">
-						USUARIO
+						USUARIO MEDIS
 					</label>
 					<input type="text" class="form-control" id="txt_loginUser" name="txt_loginUser" />
 				</div>
