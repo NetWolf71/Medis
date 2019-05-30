@@ -71,6 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					  <li><a href="<?=base_url('index.php/PacientesController')?>">Mantenedor de Pacientes</a></li>
 					  <li><a href="<?=base_url('index.php/InstitucionesController')?>">Instituciones Médicas</a></li>
 					  <li><a href="<?=base_url('index.php/EspecialidadesController')?>">Especialidades Médicas</a></li>
+					  <li><a href="<?=base_url('index.php/FichaController')?>">Fichas Médicas</a></li>
 					</ul>
 				  </li>
 					<?php
@@ -82,7 +83,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				  {
 					?>
 				  <li><a href="<?=base_url('index.php/MedicoReservasController/ver/')?><?php echo $_SESSION['id_pers'];?>">Mi Calendario de Reservas</a></li>
-				  				  <?php
+				  <li><a href="<?=base_url('index.php/FichaController')?>">Fichas Médicas</a></li>
+				  	<?php
 				  }
 				  ?>
 			  			  
