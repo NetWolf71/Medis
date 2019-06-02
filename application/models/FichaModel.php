@@ -11,7 +11,7 @@ class FichaModel extends CI_Model {
  
     public function ver(){
         //Hacemos una consulta
-        $consulta=$this->db->query("SELECT * FROM ficha order by id_ficha asc;");
+        $consulta=$this->db->query("SELECT * FROM ficha order by id_ficha asc");
          
         //Devolvemos el resultado de la consulta
         return $consulta->result();

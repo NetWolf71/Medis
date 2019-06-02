@@ -19,6 +19,7 @@
 
 <div class="container-fluid" style= 'text-align:center'>
 	<h3>FICHAS DE PACIENTES</br></h3>
+	<p><?php if(isset($mensaje)) echo $mensaje; ?></p>
 </div>
 
 
@@ -62,7 +63,29 @@
 								<tbody>
 									<?php
 										foreach($ver as $fila){
-									?>
+											//Cálculo de la edad del paciente
+												$nac = $fila->fecha_nac_ficha;
+												$dia=date("d");
+												$mes=date("m");
+												$ano=date("Y");
+												$dianaz=date("d",strtotime($nac));
+												$mesnaz=date("m",strtotime($nac));
+												$anonaz=date("Y",strtotime($nac));
+
+												//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual
+
+												if (($mesnaz == $mes) && ($dianaz > $dia)) {
+												$ano=($ano-1); 
+												}
+												//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual
+
+												if ($mesnaz > $mes) {
+												$ano=($ano-1);
+												}
+												 //ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
+												$edad=($ano-$anonaz);
+
+											?>
 									<tr>	
 										<td><?= $fila->id_ficha?></td>
 										<td><?= $fila->dni_paciente_ficha?></td>
@@ -70,17 +93,17 @@
 										<td><?= $fila->materno_ficha?></td>
 										<td><?= $fila->nombres_ficha?></td>
 										<td><?= $fila->fecha_nac_ficha?></td>
-										<td><?php //echo $edad ?></td>
+										<td><?= $edad ?></td>
 										<td><?= $fila->peso_ficha?></td>
 										<td><?= $fila->estatura_ficha?></td>
 										<td><?= $fila->dolencia_cron_ficha?></td>
 										<td><?= $fila->alergia_ficha?></td>
 										<td align="center" style="white-space:nowrap;" >
 
-											<button class="btn btn-sm btn-warning" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/mod/$fila->id_pers")?>";'  >
+											<button class="btn btn-sm btn-warning" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/mod/$fila->id_ficha")?>";'  >
 												<em class="glyphicon glyphicon-remove"></em> Modificar
 											</button>
-											<button class="btn btn-sm btn-danger" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/eliminar/$fila->id_pers")?>";'>
+											<button class="btn btn-sm btn-danger" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/eliminar/$fila->id_ficha")?>";'>
 												<em class="glyphicon glyphicon-plus"></em> Eliminar
 											</button>
 

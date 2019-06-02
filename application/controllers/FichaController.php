@@ -34,7 +34,7 @@ class FichaController extends CI_Controller{
     public function add(){
          
         //compruebo si se a enviado submit
-        if($this->input->post("submit")){
+        if($this->input->post()){
          
         //llamo al metodo add
         $add=$this->FichaModel->add(
@@ -53,20 +53,25 @@ class FichaController extends CI_Controller{
         }
         if($add==true){
             //Sesion de una sola ejecución
-            $this->session->set_flashdata('correcto', 'Ficha creada correctamente');
+            //Esto lo utilizo solo para saber si se ingresó o no el registro
+            $data['mensaje'] = 'Ficha Ingresada Correctamente';
+            //$this->load->view('FichaView', $data);
         }else{
-            $this->session->set_flashdata('incorrecto', 'Error al crear la ficha del paciente');
+            
+            $data['mensaje'] = 'Error!, no se ha podido ingresar la Ficha del Paciente';
+            //$this->load->view('FichaView', $data);
         }
          
         //redirecciono la pagina a la url por defecto
         redirect(base_url('index.php/FichaController'));
+        //$this->load->view('FichaView',$data);
     }
      
     //controlador para modificar al que 
     //le paso por la url un parametro
     public function mod($id_ficha){
         if(is_numeric($id_ficha)){
-          $datos["mod"]=$this->FichaModel->mod($id_pers);
+          $datos["mod"]=$this->FichaModel->mod($id_ficha);
           //$this->load->view("PasModView",$datos);
           if($this->input->post("submit")){
                 $mod=$this->FichaModel->mod(
