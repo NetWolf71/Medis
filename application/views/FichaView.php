@@ -99,12 +99,15 @@
 										<td><?= $fila->dolencia_cron_ficha?></td>
 										<td><?= $fila->alergia_ficha?></td>
 										<td align="center" style="white-space:nowrap;" >
+											<button class="btn btn-sm btn-success" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/ver/$fila->id_ficha")?>";'  >
+												<em class="glyphicon glyphicon-eye-open"></em> Ver
+											</button>
 
 											<button class="btn btn-sm btn-warning" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/mod/$fila->id_ficha")?>";'  >
-												<em class="glyphicon glyphicon-remove"></em> Modificar
+												<em class="glyphicon glyphicon-pencil"></em> Modificar
 											</button>
 											<button class="btn btn-sm btn-danger" type="button" onclick='window.location.href="<?=base_url("index.php/FichaController/eliminar/$fila->id_ficha")?>";'>
-												<em class="glyphicon glyphicon-plus"></em> Eliminar
+												<em class="glyphicon glyphicon-remove"></em> Eliminar
 											</button>
 
 										</td>

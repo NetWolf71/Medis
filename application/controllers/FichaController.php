@@ -76,6 +76,7 @@ class FichaController extends CI_Controller{
           if($this->input->post()){
                 $mod=$this->FichaModel->mod(
                         $id_ficha,
+                        $this->input->post("submit"),
 						//$this->input->post("id_ficha"),
                         $this->input->post("id_pers_medico_ficha"),
                         $this->input->post("dni_paciente_ficha"),
