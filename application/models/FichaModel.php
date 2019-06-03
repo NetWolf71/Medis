@@ -61,6 +61,7 @@ class FichaModel extends CI_Model {
      
     public function mod(
 			$id_ficha,
+			$modificar="NULL",
 			$id_pers_medico_ficha="NULL",
 			$dni_paciente_ficha="NULL",
 			$nombres_ficha="NULL",
@@ -74,7 +75,7 @@ class FichaModel extends CI_Model {
 			$obs_ficha="NULL"
 	){
         if($modificar=="NULL"){
-            $consulta=$this->db->query("SELECT * FROM ficha WHERE id_ficha=$id_ficha");
+            $consulta=$this->db->query("SELECT * FROM ficha WHERE id_ficha='$id_ficha'");
             return $consulta->result();
         }else{
           $consulta=$this->db->query("
@@ -90,7 +91,7 @@ class FichaModel extends CI_Model {
 				dolencia_cron_ficha='$dolencia_cron_ficha',
 				alergia_ficha='$alergia_ficha',
 				obs_ficha='$obs_ficha',
-			  WHERE id_ficha=$id_ficha;
+			  WHERE id_ficha='$id_ficha'
                   ");
           if($consulta==true){
               return true;
