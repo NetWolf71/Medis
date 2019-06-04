@@ -64,9 +64,10 @@ class PacientesController extends CI_Controller{
      
     //controlador para modificar al que 
     //le paso por la url un parametro
-    public function mod($id_pers){
+    public function mod($id_pers=null){
         if(is_numeric($id_pers)){
           $datos["mod"]=$this->PacientesModel->mod($id_pers);
+          //var_dump($datos["mod"]);
           $this->load->view("PasModView",$datos);
           if($this->input->post("submit")){
                 $mod=$this->PacientesModel->mod(
@@ -94,7 +95,7 @@ class PacientesController extends CI_Controller{
                 redirect(base_url('index.php/PacientesController'));
             }
         }else{
-            redirect(base_url()); 
+            redirect(base_url('index.php/PacientesController')); 
         }
     }
      

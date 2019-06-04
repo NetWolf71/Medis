@@ -23,7 +23,7 @@
 					<td><label for="email">Email</label></td>
 					<td><label for="pers_user">Usuario Medis</label></td>
 					<td><label for="pers_password">Password</label></td>
-					<td><label for="pers_password">Especialidad</label></td>
+					<td><label for="pers_password">Especialidad (Use Ctrl para seleccionar mas de una alternativa)</label></td>
 					</tr>
 				<tr align="center">
 					<td><input type="text" name="id_pers_tipo" class="form-control" style="text-transform:uppercase;text-align:center" size="3" value="2" readonly="readonly" id="id_pers_tipo"/></td>				
@@ -37,8 +37,8 @@
 					<td><input type="text" name="pers_user" class="form-control" id="pers_user" style="text-transform:uppercase;text-align:center"/></td>
 					<td><input type="password" name="pers_password" class="form-control" id="pers_password" style="text-align:center"/></td>								
 					<td>
-						<select id="id_especialidad" name="id_especialidad" class="form-control">
-						<option value="" selected="selected">Especialidades</option>
+						<select multiple id="id_especialidad[]" name="id_especialidad[]" class="form-control">
+						<!-- <option value="" selected="selected">Especialidades</option> -->
 						<?php 
 							foreach ($especialidades as $i) {
 							echo '<option value="'. $i->id_especialidad .'">'. $i->nombre .'</option>';

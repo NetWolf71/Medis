@@ -4,7 +4,7 @@
 ?>
 
 <div class="container-fluid" style='text-align:center'>
-   </br><h3>MODIFICAR MEDICO</h3>
+   </br><h3>MODIFICAR INSTITUCIÓN MÉDICA</h3>
 </div>
 
 <div class="container-fluid" style= 'text-align:left'>
@@ -13,7 +13,11 @@
 			<table class="table table-hover table-bordered">				
 				<div class="row">
 					<div class="col-md-12">
-						<?php foreach ($mod as $fila){ ?>
+						<?php if(empty($mod)){
+							redirect(base_url('index.php/InstitucionesController'));
+						}else{
+							foreach ($mod as $fila){ ?>
+						
 						<tr>					
 						<td align="center"><p><strong>ID</strong></p></td>
 						<td align="center"><p><strong>Nombre Institucion</strong></p></td>
@@ -85,6 +89,7 @@
 				<a class="btn btn-warning btn-md" href=<?=base_url("index.php/InstitucionesController")?>>Volver a Instituciones</a>
 			</div>
 		</form><br/>
+	<?php } //fin else?>
 	</div>
 </div>
 

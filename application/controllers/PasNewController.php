@@ -15,8 +15,8 @@ class PasNewController extends CI_Controller {
 	public function index ()
 	{
 		$this->load->view('PasNewView');
-		
-		$this->load->library('form_validation');
+		//No se que hace toda esta wea :) XD jajaja....
+		/*$this->load->library('form_validation');
 
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -25,7 +25,7 @@ class PasNewController extends CI_Controller {
 		else
 		{
 				$this->load->view('formsuccess');
-		}
+		}*/
 	}
 }
 

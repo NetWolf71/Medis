@@ -96,9 +96,10 @@ class UsuariosController extends CI_Controller{
 	
 	//controlador para modificar al que 
     //le paso por la url un parametro
-    public function mod($id_pers){
+    public function mod($id_pers=null){
         if(is_numeric($id_pers)){
           $datos["mod"]=$this->UsuariosModel->mod($id_pers);
+          //var_dump($datos["mod"]);
           $this->load->view("UserModView",$datos);
           if($this->input->post("submit")){
                 $mod=$this->UsuariosModel->mod(
@@ -127,7 +128,7 @@ class UsuariosController extends CI_Controller{
                 redirect(base_url('index.php/UsuariosController/mod/' . $id_pers));
             }
         }else{
-            redirect(base_url()); 
+            redirect(base_url('index.php/UsuariosController')); 
         }
     }
     

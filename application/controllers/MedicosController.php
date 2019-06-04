@@ -9,7 +9,7 @@ class MedicosController extends CI_Controller{
         //llamo al helper url
         $this->load->helper("url");  
         $this->load->helper("form");  
-         
+        $this->load->helper('array');
         //llamo o incluyo el modelo
         $this->load->model("MedicosModel");
          
@@ -92,9 +92,10 @@ class MedicosController extends CI_Controller{
      
     //controlador para modificar al que 
     //le paso por la url un parametro
-    public function mod($id_pers){
+    public function mod($id_pers=null){
         if(is_numeric($id_pers)){
           $datos["mod"]=$this->MedicosModel->mod($id_pers);
+          //var_dump($datos["mod"]);
           $this->load->view("MedModView",$datos);
           if($this->input->post("submit")){
                 $mod=$this->MedicosModel->mod(
@@ -123,7 +124,7 @@ class MedicosController extends CI_Controller{
                 redirect(base_url('index.php/MedicosController'));
             }
         }else{
-            redirect(base_url()); 
+            redirect(base_url('index.php/MedicosController')); 
         }
     }
     

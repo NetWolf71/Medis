@@ -14,7 +14,11 @@
 			<table class="table table-hover table-bordered">				
 				<div class="row">
 					<div class="col-md-12">
-						<?php foreach ($mod as $fila){ ?>
+						<?php if(empty($mod)){
+							redirect(base_url('index.php/UsuariosController'));
+						}else{
+
+							foreach ($mod as $fila){ ?>
 						<tr>
 						<td align="center"><p><strong>ID</strong></p></td>
 						<td align="center"><p><strong>Tipo</strong></p></td>
@@ -80,7 +84,7 @@
 			
 			
 		</form>
-		
+		<?php } ?>
 		<br/>
 	
 	

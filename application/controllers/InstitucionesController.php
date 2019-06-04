@@ -64,9 +64,10 @@ class InstitucionesController extends CI_Controller{
      
     //controlador para modificar al que 
     //le paso por la url un parametro
-    public function mod($id_institucion){
+    public function mod($id_institucion=null){
         if(is_numeric($id_institucion)){
           $datos["mod"]=$this->InstitucionesModel->mod($id_institucion);
+          //var_dump($datos["mod"]);
           $this->load->view("InstModView",$datos);
           if($this->input->post("submit")){
 			  
@@ -86,10 +87,10 @@ class InstitucionesController extends CI_Controller{
                 }else{
                     $this->session->set_flashdata('incorrecto', 'Error al agregar Institución');
                 }
-                redirect(base_url('index.php/InstitucionController'));
+                redirect(base_url('index.php/InstitucionesController'));
             }
         }else{
-            redirect(base_url()); 
+            redirect(base_url('index.php/InstitucionesController')); 
         }
     }
      
