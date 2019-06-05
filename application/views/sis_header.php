@@ -39,7 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					   $_SESSION['pers_lastname1'].' '.
 					   $_SESSION['pers_lastname2'];?>
 			<br>
-			<?php $hoy = date("F j, Y, g:i a"); echo 'Fecha: ' . $hoy?></br>
+			<?php date_default_timezone_set("America/Santiago");
+				$fecha = date("d-m-Y, G:i:a");
+				echo "Fecha: ".$fecha;
+			?>
+			</br>
 			</h6>
 			<h6> PERFIL: <strong><?php echo $_SESSION['pers_tipo_nombre']; ?></strong> </h6>
 			</div>

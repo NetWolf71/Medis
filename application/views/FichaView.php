@@ -85,6 +85,9 @@
 												 //ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad
 												$edad=($ano-$anonaz);
 
+												$originalDate = $fila->fecha_nac_ficha;
+												$fnac = date("d/m/Y", strtotime($originalDate));
+
 											?>
 									<tr>	
 										<td><?= $fila->id_ficha?></td>
@@ -92,7 +95,7 @@
 										<td><?= $fila->paterno_ficha?></td>
 										<td><?= $fila->materno_ficha?></td>
 										<td><?= $fila->nombres_ficha?></td>
-										<td><?= $fila->fecha_nac_ficha?></td>
+										<td><?= $fnac?></td>
 										<td><?= $edad ?></td>
 										<td><?= $fila->peso_ficha?></td>
 										<td><?= $fila->estatura_ficha?></td>

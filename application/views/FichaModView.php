@@ -14,7 +14,10 @@
 			<form action="" method="post">
 				<input type="hidden" name="id_pers_medico_ficha" id="id_pers_medico_ficha" value="<?php echo $_SESSION['id_pers'];?>">
 				<div class="form-group col-xs-2">
-					 <?php foreach ($mod as $fila){ ?>
+					 <?php if(empty($mod)){
+						 redirect(base_url('index.php/FichaController'));
+					 }else{
+					 	foreach ($mod as $fila){ ?>
 					 <input type="hidden" name="id_ficha" id="id_ficha" value="<?=$fila->id_ficha?>">
 					<label for="rut">
 						RUT
@@ -110,6 +113,7 @@
 				<?php
 					}
 				?>
+		<?php } ?>
 		</div>
 	</div>
 </div>

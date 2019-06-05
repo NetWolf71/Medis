@@ -193,6 +193,8 @@
 								<tbody>
 									<?php
 										foreach($ver as $fila){
+											$originalDate = $fila->fecha_nacimiento;
+											$fnac = date("d/m/Y", strtotime($originalDate));
 									?>
 										<tr>	
 											<td> <?= $fila->id_pers?>             </td>
@@ -202,7 +204,7 @@
 											<td> <?= $fila->pers_lastname1?>      </td>
 											<td> <?= $fila->pers_lastname2?>      </td>
 											<td> <?= $fila->id_especialidad?>      </td>
-											<td> <?= $fila->fecha_nacimiento?>    </td>
+											<td> <?= $fnac?>    </td>
 											<td> <?= $fila->dni?>                 </td>
 											<td> <?= $fila->pers_fecha_creacion?> </td>
 											<td> <?= $fila->pers_vigencia?>       </td>

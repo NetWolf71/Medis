@@ -72,12 +72,12 @@ class FichaController extends CI_Controller{
     public function mod($id_ficha){
         if(is_numeric($id_ficha)){
           $datos["mod"]=$this->FichaModel->mod($id_ficha);
+          //
           $this->load->view("FichaModView",$datos);
           if($this->input->post()){
                 $mod=$this->FichaModel->mod(
                         $id_ficha,
                         $this->input->post("submit"),
-						//$this->input->post("id_ficha"),
                         $this->input->post("id_pers_medico_ficha"),
                         $this->input->post("dni_paciente_ficha"),
                         $this->input->post("nombres_ficha"),
@@ -98,7 +98,7 @@ class FichaController extends CI_Controller{
                 redirect(base_url('index.php/FichaController'));
             }
         }else{
-            redirect(base_url()); 
+            redirect(base_url('index.php/FichaController')); 
         }
     }
      
